@@ -129,20 +129,33 @@ function toPathList(watched) {
 /*
  * Bundling
  */
+
+function logBuildResponse(buildResponse, stamp) {
+    if (verbose) {
+        console.log(buildResponse);
+    }
+    console.log('\x1b[32m' + 'Bundling complete:' + '\x1b[0m',
+        (new Date().getTime() - stamp) / 1000 + 's');
+}
+
+function logBuildError(err) {
+    console.error('\x1b[31m' + 'Build failed.', '\x1b[0m');
+    if (watch) console.error(err.originalError);
+}
+
 function bundle(config) {
-    let stamp = new Date().getTime();
+    const stamp = new Date().getTime();
     if (!watch) console.log('Bundling started.');
     if (verbose) console.log(config);
-    requirejs.optimize(config, (buildResponse) => {
-        if (verbose) {
-            console.log(buildResponse);
-        }
-        console.log('\x1b[32m' + 'Bundling complete:' + '\x1b[0m',
-            (new Date().getTime() - stamp) / 1000 + 's');
-    }, (err) => {
-        console.error('\x1b[31m' + 'Build failed.', '\x1b[0m');
-        console.error(err.originalError);
-    });
+    // Call optimize without error callback. Otherwise
+    // the optimizer catches all exceptions and the script 
+    // exits with 0 instead of 1
+    if (!watch) {
+        return requirejs.optimize(config, (buildResponse) => 
+            logBuildResponse(buildResponse, stamp));
+    }
+    return requirejs.optimize(config, (buildResponse) => 
+        logBuildResponse(buildResponse, stamp), logBuildError);
 }
 
 /*
