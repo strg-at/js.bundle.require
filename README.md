@@ -27,7 +27,7 @@ tpl/dist/bundle.dev.js
 ## Install
 
 ```bash
-$ npm install git+https://github.com/strg-at/js.bundle.require.git
+$ npm install --save git+https://github.com/strg-at/js.bundle.require.git
 $ cp ./node_modules/js.bundle.require/example.config.js build.config.js  # copy example config
 $ vim build.config.js  # edit the config
 ```
