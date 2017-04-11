@@ -13,7 +13,7 @@ The build process uses the following libraries:
 
 
 ### Example
-```
+```bash
 $ ./node_modules/.bin/js.bundle.require
 ------------- includes ----------------
 tpl/foo.js
@@ -26,7 +26,7 @@ tpl/dist/bundle.dev.js
 
 ## Install
 
-```
+```bash
 $ npm install git+https://github.com/strg-at/js.bundle.require.git
 $ cp ./node_modules/js.bundle.require/example.config.js build.config.js  # copy example config
 $ vim build.config.js  # edit the config
@@ -34,7 +34,7 @@ $ vim build.config.js  # edit the config
 
 ## CLI Usage
 
-```
+```bash
 $ ./node_modules/.bin/js.bundle.require            # create development build
 $ ./node_modules/.bin/js.bundle.require --minify   # create production build
 $ ./node_modules/.bin/js.bundle.require --watch    # start watcher
