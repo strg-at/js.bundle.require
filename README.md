@@ -1,4 +1,47 @@
-# License
+# js.bundle.require
+
+Automatic JS Bundling with RequireJS and Mustache Support.
+
+Traverses a configurable root directory for \*.js and \*.mustache files and includes all
+assets in one optimized bundle.
+
+The build process uses the following libraries:
+- requirejs optimizer
+- almond
+- mustache
+- requirejs mustache loader
+
+
+### Example
+```
+$ ./node_modules/.bin/js.bundle.require
+------------- includes ----------------
+tpl/foo.js
+tpl/foo.mustache
+tpl/partials/bar.mustache
+-------------- output -----------------
+tpl/dist/bundle.js
+tpl/dist/bundle.dev.js
+```
+
+## Install
+
+```
+$ npm install git+https://github.com/strg-at/js.bundle.require.git
+$ cp ./node_modules/js.bundle.require/example.config.js build.config.js  # copy example config
+$ vim build.config.js  # edit the config
+```
+
+## CLI Usage
+
+```
+$ ./node_modules/.bin/js.bundle.require            # create development build
+$ ./node_modules/.bin/js.bundle.require --minify   # create production build
+$ ./node_modules/.bin/js.bundle.require --watch    # start watcher
+$ ./node_modules/.bin/js.bundle.require --verbose  # print config and build response
+```
+
+## License
 
 Copyright © 2015-2017 STRG.AT GmbH, Vienna, Austria
 
