@@ -1,0 +1,47 @@
+{
+  "name": "js.bundle.require",
+  "version": "v0.0.1",
+  "description": "Automatic JS Bundling with RequireJS and Mustache Support",
+  "contributors": [
+    {
+      "name": "Ralf Traunsteiner",
+      "email": "ralf@strg.at",
+      "url": "https://strg.at"
+    }
+  ],
+  "main": "index.js",
+  "bin": {
+    "js.bundle.require": "./index.js"
+  },
+  "private": true,
+  "analyze": true,
+  "config": {},
+  "keywords": [
+    "requirejs",
+    "bundle",
+    "mustache",
+    "collector"
+  ],
+  "scripts": {
+    "test": "./node_modules/.bin/eslint index.js"
+  },
+  "engines": {
+    "node": ">=6.9.2"
+  },
+  "dependencies": {
+    "almond": "^0.3.3",
+    "chokidar": "^1.6.1",
+    "lodash": "^4.17.4",
+    "minimist": "^1.2.0",
+    "mustache": "^2.3.0",
+    "requirejs": "^2.3.3",
+    "requirejs-mustache-loader": "^1.0.5",
+    "text": "git+https://github.com/requirejs/text.git",
+    "uglify-js": "^2.8.21"
+  },
+  "author": "strg.at <score@strg.at>",
+  "license": "LGPL-3.0",
+  "devDependencies": {
+    "eslint": "^3.19.0"
+  }
+}
