@@ -1,6 +1,6 @@
 {
   "name": "js.bundle.require",
-  "version": "v0.0.1",
+  "version": "v0.0.2",
   "description": "Automatic JS Bundling with RequireJS and Mustache Support",
   "contributors": [
     {
@@ -11,7 +11,8 @@
   ],
   "main": "index.js",
   "bin": {
-    "js.bundle.require": "./index.js"
+    "js.bundle.require": "./index.js",
+    "js.bundle.require.test": "./test.js"
   },
   "private": true,
   "analyze": true,
@@ -23,7 +24,7 @@
     "collector"
   ],
   "scripts": {
-    "test": "./node_modules/.bin/eslint index.js"
+    "test": "./node_modules/.bin/eslint index.js test.js"
   },
   "engines": {
     "node": ">=6.9.2"
@@ -37,11 +38,9 @@
     "requirejs": "^2.3.3",
     "requirejs-mustache-loader": "^1.0.5",
     "text": "git+https://github.com/requirejs/text.git",
-    "uglify-js": "^2.8.21"
+    "uglify-js": "^2.8.21",
+    "eslint": "^3.19.0"
   },
   "author": "strg.at <score@strg.at>",
-  "license": "LGPL-3.0",
-  "devDependencies": {
-    "eslint": "^3.19.0"
-  }
+  "license": "LGPL-3.0"
 }
