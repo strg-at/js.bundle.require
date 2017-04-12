@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 const DIR = process.cwd();
 
-var CLIEngine = require("eslint").CLIEngine;
+const CLIEngine = require("eslint").CLIEngine;
 const Path = require('path');
 const argv = require('minimist')(process.argv.slice(2));
 const configFile = argv.config || argv.c || 'build.config.js';
@@ -26,6 +26,7 @@ if (report.results.length < 1) {
     });
     throw new Error(`Test failed with ${report.errorCount} Errors`);
 }
+
 console.log(`\x1b[32mTest passed.\x1b[0m \n` +
     `${report.errorCount} Errors ` +
     `${report.warningCount} Warnings\nFile: ${BUNDLE}`);

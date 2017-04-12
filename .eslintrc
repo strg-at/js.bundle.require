@@ -4,6 +4,7 @@
       "es6": true
   },
   "rules": {
+    "no-var": 2,
     "comma-dangle": [
       2,
       "never"
@@ -31,6 +32,9 @@
     "indent": [2, 4, {"SwitchCase": 1}],
     "consistent-return": 0,
     "no-plusplus": [2, {"allowForLoopAfterthoughts": true}],
-    "no-unused-vars": ["error", {"args": "none"}]
+    "no-unused-vars": ["error", {"args": "none"}],
+    "prefer-const": [2, {
+        "destructuring": "all"
+    }]
   }
 }
