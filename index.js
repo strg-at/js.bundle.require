@@ -15,12 +15,17 @@ const ARGV = [
     'm', 'minify',
     'v', 'verbose',
     'n', 'no-source-urls',
-    'c', 'config'
+    'c', 'config',
+    'h', 'help'
 ];
 
 /*
  * Parse CLI options
  */
+if (argv.help || argv.h) {
+    require('./help');
+    return;
+}
 const configFile = argv.config || argv.c;
 const options = (configFile) ?
     require(Path.resolve(DIR, configFile)) :

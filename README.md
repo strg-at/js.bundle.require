@@ -39,6 +39,9 @@ $ ./node_modules/.bin/js.bundle.require            # create development build
 $ ./node_modules/.bin/js.bundle.require --minify   # create production build
 $ ./node_modules/.bin/js.bundle.require --watch    # start watcher
 $ ./node_modules/.bin/js.bundle.require --verbose  # print config and build response
+$ ./node_modules/.bin/js.bundle.require --config   # print config and build response
+$ ./node_modules/.bin/js.bundle.require --help     # print options
+$ ./node_modules/.bin/js.bundle.require --config build.config.js  # specify path to config file
 ```
 
 ## License
