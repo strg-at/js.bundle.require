@@ -103,7 +103,7 @@ function relativeModulePath(path, removeExt) {
 function config(paths) {
     return {
         baseUrl: options.baseDir,
-        mainConfigFile: options.mainConfigFile,
+        mainConfigFile: options.mainConfigFile || [],
         out: OUT_FILE,
         name: relativeModulePath('almond', 'js'),
         findNestedDependencies: true,
