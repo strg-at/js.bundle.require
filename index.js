@@ -88,15 +88,24 @@ function validateArgv(argv) {
     }
 }
 validateArgv(argv);
+
+function relativeModulePath(path, removeExt) {
+    const relPath = Path.relative(BASEDIR, require.resolve(path));
+    if (removeExt) {
+        return relPath.replace(new RegExp(`\.${removeExt}$`), '');
+    }
+    return relPath;
+}
+
 /*
  * Base Config for RequireJS Optimizer
  */
 function config(paths) {
     return {
         baseUrl: options.baseDir,
-        mainConfigFile: options.mainConfigFile,
+        mainConfigFile: options.mainConfigFile || [],
         out: OUT_FILE,
-        name: '../node_modules/almond/almond',
+        name: relativeModulePath('almond', 'js'),
         findNestedDependencies: true,
         optimize: (minify) ? 'uglify' : 'none',
         useSourceUrl: !minify && !noSourceUrls,
@@ -106,11 +115,10 @@ function config(paths) {
             }
         },
         paths: {
-            'lib/template':
-                '../node_modules/requirejs-mustache-loader/lib/template',
-            'template': '../node_modules/requirejs-mustache-loader/index',
-            'text': '../node_modules/text/text',
-            'mustache': '../node_modules/mustache/mustache'
+            'lib/template': relativeModulePath('requirejs-mustache-loader/lib/template.mustache', 'mustache'),
+            'template': relativeModulePath('requirejs-mustache-loader', 'js'),
+            'text': relativeModulePath('text', 'js'),
+            'mustache': relativeModulePath('mustache', 'js')
         },
         stubModules: ['text', 'lib/template'],
         include: [].concat(paths)
