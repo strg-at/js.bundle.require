@@ -117,7 +117,7 @@ function config(paths) {
         paths: {
             'lib/template': relativeModulePath('requirejs-mustache-loader/lib/template.mustache', 'mustache'),
             'template': relativeModulePath('requirejs-mustache-loader', 'js'),
-            'text': relativeModulePath('text', 'js'),
+            'text': relativeModulePath('requirejs-text', 'js'),
             'mustache': relativeModulePath('mustache', 'js')
         },
         stubModules: ['text', 'lib/template'],
