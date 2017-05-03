@@ -102,7 +102,7 @@ function relativeModulePath(path, removeExt) {
  */
 function config(paths) {
     return {
-        baseUrl: options.baseDir,
+        baseUrl: BASEDIR,
         mainConfigFile: options.mainConfigFile || [],
         out: OUT_FILE,
         name: relativeModulePath('almond', 'js'),
@@ -140,7 +140,7 @@ const watcher = chokidar.watch(FILES, {
  * Helpers
  */
 function stripBase(path) {
-    return path.replace(/^tpl\//, '');
+    return path.replace(new RegExp(`^${BASEDIR}\/`), '');
 }
 
 function stripJSExtension(path) {
