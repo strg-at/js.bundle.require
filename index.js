@@ -42,7 +42,8 @@ const ARGV = [
     'v', 'verbose',
     'n', 'no-source-urls',
     'c', 'config',
-    'h', 'help'
+    'h', 'help',
+    'x', 'exclude-almond'
 ];
 
 /*
@@ -60,6 +61,7 @@ const watch = argv.watch || argv.w || false;
 const minify = argv.minify || argv.m || false;
 const verbose = argv.verbose || argv.v || false;
 const noSourceUrls = argv['no-source-urls'] || argv.n || false;
+const excludeAlmond = argv['exclude-almond'] || argv.x || false;
 
 /*
  * Constants and additional config
@@ -101,11 +103,10 @@ function relativeModulePath(path, removeExt) {
  * Base Config for RequireJS Optimizer
  */
 function config(paths) {
-    return {
+    const conf = {
         baseUrl: BASEDIR,
         mainConfigFile: options.mainConfigFile || [],
         out: OUT_FILE,
-        name: relativeModulePath('almond', 'js'),
         findNestedDependencies: true,
         optimize: (minify) ? 'uglify' : 'none',
         useSourceUrl: !minify && !noSourceUrls,
@@ -123,6 +124,10 @@ function config(paths) {
         stubModules: ['text', 'lib/template'],
         include: [].concat(paths)
     };
+    if (!excludeAlmond) {
+        conf.name = relativeModulePath('almond', 'js');
+    }
+    return conf;
 }
 /*
  * Watcher Singleton
