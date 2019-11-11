@@ -124,7 +124,12 @@ function config(paths) {
         stubModules: ['text', 'lib/template'],
         include: [].concat(paths)
     };
-    if (!excludeAlmond) {
+    if (excludeAlmond) {
+        // Include requirejs in build
+        conf.paths['requireLib'] = relativeModulePath('requirejs', 'js');
+        conf.include.push('requireLib');
+    } else {
+        // Resolve and include almond for single file bundle
         conf.name = relativeModulePath('almond', 'js');
     }
     return conf;
