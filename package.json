@@ -1,6 +1,6 @@
 {
   "name": "js.bundle.require",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "description": "Automatic JS Bundling with RequireJS and Mustache Support",
   "contributors": [
     {
