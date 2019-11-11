@@ -126,7 +126,7 @@ function config(paths) {
     };
     if (excludeAlmond) {
         // Include requirejs in build
-        conf.paths['requireLib'] = relativeModulePath('requirejs', 'js');
+        conf.paths['requireLib'] = relativeModulePath('requirejs/require', 'js');
         conf.include.push('requireLib');
     } else {
         // Resolve and include almond for single file bundle
