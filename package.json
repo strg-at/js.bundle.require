@@ -34,7 +34,7 @@
     "chokidar": "^1.6.1",
     "eslint": "^3.19.0",
     "lodash": "^4.17.4",
-    "minimist": "^1.2.0",
+    "minimist": "^1.2.3",
     "mustache": "^2.3.0",
     "requirejs": "^2.3.3",
     "requirejs-mustache-loader": "^1.0.5",
