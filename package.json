@@ -33,7 +33,7 @@
     "almond": "^0.3.3",
     "chokidar": "^1.6.1",
     "eslint": "^3.19.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.13",
     "minimist": "^1.2.3",
     "mustache": "^2.3.0",
     "requirejs": "^2.3.3",
