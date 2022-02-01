@@ -39,7 +39,7 @@
     "requirejs": "^2.3.3",
     "requirejs-mustache-loader": "^1.0.5",
     "requirejs-text": "^2.0.15",
-    "uglify-js": "^2.8.21"
+    "uglify-js": "^3.0.0"
   },
   "author": "strg.at <score@strg.at>",
   "license": "LGPL-3.0"
